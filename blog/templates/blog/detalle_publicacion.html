@@ -1,0 +1,8 @@
+{%extends "blog/base.html"%}
+    <div class="post">
+        <div class="date">
+            publicada: {{publicaciones.fecha_publicacion }}
+        </div>
+        <h1><a href="{% url "blog.views.detalle_publicacion" pk=post.pk %}">{{publicaciones.titulo}}</a></h1>
+            <p>{{publicaciones.texto|linebreaks }}</p>
+    </div>
