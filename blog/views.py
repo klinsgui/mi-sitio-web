@@ -1,4 +1,4 @@
-rom django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Postear
@@ -10,4 +10,4 @@ def listar_publicaciones(request):
 
 def detalle_publicacion(request,pk):
     publicacion = Poster.get_object_or_404(Postear,pk=pk)
-    #return render(request,'blog/detalle_publicacion.html',{'publicacion':publicacion})
+    return render(request,'blog/detalle_publicacion.html',{'publicacion':publicacion})
