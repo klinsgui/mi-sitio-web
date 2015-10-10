@@ -4,7 +4,7 @@
         <div class="date">
             publicada: {{post.fecha_publicacion }}
         </div>
-        <h1><a href="{% url "blog.views.detalle_publicacion" pk=post.pk %}">{{post.titulo}}</a></h1>
+        <h1><a href="">{{post.titulo}}</a></h1>
             <p>{{post.texto|linebreaks }}</p>
     </div>
 {% endfor %}
