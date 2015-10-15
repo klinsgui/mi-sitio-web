@@ -2,9 +2,9 @@
 {% block content %}
     <div class="post">
         <div class="date">
-            publicada: {{publicacion.fecha_publicacion }}
+            publicada: {{publicaciones.fecha_publicacion }}
         </div>
-        <h1><a href="{% url "blog.views.detalle_publicacion" pk=post.pk %}">{{publicacion.titulo}}</a></h1>
+        <h1><a href="{% url "blog.views.detalle_publicacion" pk=post.pk %}">{{publicaciones.titulo}}</a></h1>
             <p>{{publicaciones.texto|linebreaks }}</p>
     </div>
 {% endblock content %}
