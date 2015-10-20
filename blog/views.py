@@ -9,5 +9,5 @@ def listar_publicaciones(request):
     return render(request, 'blog/listar_publicaciones.html', {'publicaciones':publicaciones})
 
 def detalle_publicacion(request,pk):
-    publicacion = Poster.get_object_or_404(Postear,pk=pk)
+    publicacion = Postear.get_object_or_404(Postear,pk=pk)
     return render(request,'blog/detalle_publicacion.html',{'publicacion':publicacion})
