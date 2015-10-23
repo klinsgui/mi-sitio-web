@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from django.shortcuts import render
 from django.utils import timezone
 from .models import Postear
 from .forms import PostForm
@@ -24,10 +23,10 @@ def nueva_publicacion(request):
             return redirect('blog.views.detalle_publicacion', pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'blog/editar_publicacion.html', {'form': form})
+    return render(request, 'blog/editar_publi.html', {'form': form})
 
 
-def editar_publicacion(request, pk):
+def editar_publi(request, pk):
     post = get_object_or_404(Postear, pk=pk)
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
@@ -36,6 +35,6 @@ def editar_publicacion(request, pk):
             post.autor = request.user
             post.save()
             return redirect('blog.views.detalle_publicacion', pk=post.pk)
-        else:
-            form = PostForm(instance=post)
-        return render(request, 'blog/editar_publicacion.html', {'form': form})
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'blog/editar_publi.html', {'form': form})
